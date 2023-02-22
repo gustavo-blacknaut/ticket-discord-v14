@@ -1,0 +1,19 @@
+{
+    "token": "TOKEN DO SEU BOT AQUI!",
+    "foo": "© Todos os direitos a Blacknaut",
+    "color": "#00ff00",
+
+    "botao": "Abrir Ticket",
+    "emojibotao": "🎫",
+
+    "tituloembed": "`🎫` Central de Atendimentos",
+    "descricaoembed": "```Clique no botão abaixo para abrir um canal de atendimento.```",
+
+    "open": "Seu ticket foi aberto em:",
+
+    "opentickettitulo": "`🎫` Central de Atendimentos",
+    "openticketdesc": "```Seu ticket foi aberto com sucesso, agora basta aguardar que algum staff o atenderá!```",
+
+    "botaofecha": "Fechar Ticket",
+    "botaofechaemoji": "❌"
+}
