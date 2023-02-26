@@ -10,6 +10,7 @@ client.on('ready', async() => {
 
     client.application.commands.create({
         name:'setup',
+        description: `Configure o canal do ticket!`,
         dmPermission: false
     })
 })
@@ -38,6 +39,9 @@ client.on('interactionCreate', async(interaction) => {
     if (interaction.isButton()) {
         if(interaction.customId === 'ticket') {
             await interaction.deferReply({ephemeral: true}).catch(e => console.log(e));
+
+            let achar = interaction.guild.channels.cache.find(c => c.topic === `${interaction.member.id}`)
+           if (achar) return interaction.reply({ content: `${interaction.member}, você já tem um ticket aberto em: ${achar}.`, ephemeral: true })
   
             let iniciarticket = new EmbedBuilder()
             .setColor(config.color)
@@ -66,6 +70,7 @@ client.on('interactionCreate', async(interaction) => {
                         allow: [PermissionsBitField.Flags.ViewChannel, PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.ReadMessageHistory],
                     },
                 ],
+                topic: `${interaction.member.id}`
             })
             .then(async (channel) => {
                 let embed = new EmbedBuilder()
